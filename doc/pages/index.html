@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Atmosphere &mdash; Documentation</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="static/styles/style.css" />
+    </head>
+    <body>
+        <div class="Doc-Shell">
+            <aside class="Doc-Sidebar" id="DocSidebar">
+                <div class="Sidebar-Top">
+                    <div class="Sidebar-Brand">
+                        <div class="Brand-Icon">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <div class="Brand-Meta">
+                            <span class="Brand-Name">Atmosphere</span>
+                            <span class="Brand-Tag">v1.0 &middot; Docs</span>
+                        </div>
+                    </div>
+                    <button
+                        class="Sidebar-CloseBtn"
+                        id="SidebarCloseBtn"
+                        aria-label="Close sidebar"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <nav class="Sidebar-Nav">
+                    <div class="Nav-Group">
+                        <span class="Nav-Label">Getting Started</span>
+                        <a
+                            href="#overview"
+                            class="Nav-Link is-active"
+                            data-section="overview"
+                        >
+                            <i class="fa-solid fa-house"></i> Overview
+                        </a>
+                        <a
+                            href="#install"
+                            class="Nav-Link"
+                            data-section="install"
+                        >
+                            <i class="fa-solid fa-download"></i> Installation
+                        </a>
+                        <a
+                            href="#quickstart"
+                            class="Nav-Link"
+                            data-section="quickstart"
+                        >
+                            <i class="fa-solid fa-bolt"></i> Quick Start
+                        </a>
+                    </div>
+                    <div class="Nav-Group">
+                        <span class="Nav-Label">Tools</span>
+                        <a
+                            href="#self-scan"
+                            class="Nav-Link"
+                            data-section="self-scan"
+                        >
+                            <i class="fa-solid fa-user-shield"></i> Self Scan
+                        </a>
+                        <a
+                            href="#ip-lookup"
+                            class="Nav-Link"
+                            data-section="ip-lookup"
+                        >
+                            <i
+                                class="fa-solid fa-magnifying-glass-location"
+                            ></i>
+                            IP Lookup
+                        </a>
+                        <a
+                            href="#batch-lookup"
+                            class="Nav-Link"
+                            data-section="batch-lookup"
+                        >
+                            <i class="fa-solid fa-layer-group"></i> Batch Lookup
+                        </a>
+                        <a
+                            href="#dns-tools"
+                            class="Nav-Link"
+                            data-section="dns-tools"
+                        >
+                            <i class="fa-solid fa-server"></i> DNS Tools
+                        </a>
+                        <a
+                            href="#ssl-check"
+                            class="Nav-Link"
+                            data-section="ssl-check"
+                        >
+                            <i class="fa-solid fa-lock"></i> SSL Certificate
+                        </a>
+                        <a href="#whois" class="Nav-Link" data-section="whois">
+                            <i class="fa-solid fa-id-card"></i> Whois Lookup
+                        </a>
+                        <a
+                            href="#header-inspect"
+                            class="Nav-Link"
+                            data-section="header-inspect"
+                        >
+                            <i class="fa-solid fa-list-ul"></i> Header Inspector
+                        </a>
+                        <a
+                            href="#network-tools"
+                            class="Nav-Link"
+                            data-section="network-tools"
+                        >
+                            <i class="fa-solid fa-tower-broadcast"></i> Network
+                            Tools
+                        </a>
+                    </div>
+                    <div class="Nav-Group">
+                        <span class="Nav-Label">Reference</span>
+                        <a href="#api" class="Nav-Link" data-section="api">
+                            <i class="fa-solid fa-code"></i> API Reference
+                        </a>
+                        <a href="#build" class="Nav-Link" data-section="build">
+                            <i class="fa-solid fa-hammer"></i> Build &amp;
+                            Deploy
+                        </a>
+                        <a
+                            href="#license"
+                            class="Nav-Link"
+                            data-section="license"
+                        >
+                            <i class="fa-solid fa-scale-balanced"></i> License
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="Sidebar-Footer">
+                    <a
+                        href="https://github.com/MatrixTM26/Atmosphere"
+                        class="Footer-Link"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                        <span>MatrixTM26 / Atmosphere</span>
+                    </a>
+                </div>
+            </aside>
+
+            <div class="Doc-Overlay" id="DocOverlay"></div>
+
+            <div class="Doc-Main">
+                <header class="Doc-Header">
+                    <button
+                        class="Header-MenuBtn"
+                        id="HeaderMenuBtn"
+                        aria-label="Open sidebar"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="Header-Breadcrumb">
+                        <span class="Breadcrumb-Repo">
+                            <i class="fa-brands fa-github"></i> MatrixTM26 /
+                            Atmosphere
+                        </span>
+                        <i class="fa-solid fa-chevron-right Breadcrumb-Sep"></i>
+                        <span class="Breadcrumb-Page" id="BreadcrumbPage"
+                            >Overview</span
+                        >
+                    </div>
+                    <div class="Header-Actions">
+                        <a
+                            href="https://github.com/MatrixTM26/Atmosphere"
+                            class="Header-GithubBtn"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </header>
+
+                <main class="Doc-Content">
+                    <section id="overview" class="Doc-Section">
+                        <div class="Section-Hero">
+                            <h1 class="Hero-Title">
+                                <span class="Title-Icon"
+                                    ><i class="fa-solid fa-wind"></i
+                                ></span>
+                                Atmosphere
+                            </h1>
+                            <p class="Hero-Desc">
+                                A self-hosted OSINT &amp; network intelligence
+                                platform written in Go. Combines IP geolocation,
+                                DNS resolution, SSL inspection, Whois lookup,
+                                and HTTP header analysis into a single
+                                dark-themed web interface &mdash; built for
+                                security researchers and red teamers.
+                            </p>
+                            <div class="Hero-Stats">
+                                <div class="Stat-Item">
+                                    <i class="fa-solid fa-toolbox"></i>
+                                    <span class="Stat-Num">8</span>
+                                    <span class="Stat-Label">Tools</span>
+                                </div>
+                                <div class="Stat-Divider"></div>
+                                <div class="Stat-Item">
+                                    <i class="fa-brands fa-golang"></i>
+                                    <span class="Stat-Num">Go</span>
+                                    <span class="Stat-Label">Backend</span>
+                                </div>
+                                <div class="Stat-Divider"></div>
+                                <div class="Stat-Item">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <span class="Stat-Num">3D</span>
+                                    <span class="Stat-Label">Globe Map</span>
+                                </div>
+                                <div class="Stat-Divider"></div>
+                                <div class="Stat-Item">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span class="Stat-Num">Zero</span>
+                                    <span class="Stat-Label">Dependencies</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Alert Alert--info">
+                            <i class="fa-solid fa-circle-info Alert-Icon"></i>
+                            <div class="Alert-Body">
+                                <strong>Educational Use Only.</strong>
+                                Information is derived from standard HTTP
+                                headers, public browser APIs, and third-party IP
+                                geolocation providers. No personal data is
+                                stored or exfiltrated. Use only for education
+                                and lawful security research.
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">What is Atmosphere?</h2>
+                        <p>
+                            Atmosphere is a lightweight,
+                            zero-external-dependency OSINT tool designed to run
+                            entirely on your own infrastructure. It wraps
+                            multiple reconnaissance primitives &mdash;
+                            geolocation, DNS, SSL, Whois, HTTP headers &mdash;
+                            into a single coherent UI that feels like a
+                            GitHub-native dark interface.
+                        </p>
+                        <p>
+                            The backend is pure Go with no ORM, no framework,
+                            and no persistent database. All lookups are
+                            performed in real-time using Go's standard library
+                            and a small set of well-known public APIs.
+                        </p>
+
+                        <h2 class="Section-H2">Architecture</h2>
+                        <div class="Arch-Grid">
+                            <div class="Arch-Layer">
+                                <div class="Arch-LayerHead">
+                                    <i class="fa-solid fa-display"></i> Frontend
+                                </div>
+                                <div class="Arch-LayerBody">
+                                    Vanilla HTML/CSS/JS served directly from
+                                    Go's <code>net/http</code>. No build step,
+                                    no bundler. Font Awesome icons, Leaflet.js
+                                    for 2D maps, Three.js-based 3D globe for
+                                    geolocation visualization.
+                                </div>
+                            </div>
+                            <div class="Arch-Arrow">
+                                <i class="fa-solid fa-arrows-up-down"></i>
+                            </div>
+                            <div class="Arch-Layer">
+                                <div class="Arch-LayerHead">
+                                    <i class="fa-solid fa-gears"></i> Backend
+                                </div>
+                                <div class="Arch-LayerBody">
+                                    Go HTTP server exposing REST JSON endpoints
+                                    under <code>/api/</code>
+                                    and serving static assets. Services are
+                                    decoupled via interfaces in
+                                    <code>internal/service/</code>.
+                                </div>
+                            </div>
+                            <div class="Arch-Arrow">
+                                <i class="fa-solid fa-arrows-up-down"></i>
+                            </div>
+                            <div class="Arch-Layer">
+                                <div class="Arch-LayerHead">
+                                    <i class="fa-solid fa-cloud"></i> External
+                                </div>
+                                <div class="Arch-LayerBody">
+                                    Public IP geolocation APIs (ipwho.is,
+                                    ip-api.com, ipinfo.io), system DNS resolver,
+                                    TLS dial for SSL inspection, WHOIS TCP port
+                                    43.
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Project Structure</h2>
+                        <div class="FileTree">
+                            <div class="FileTree-Row">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">Atmosphere/</span>
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent1">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">cmd/server/</span>
+                                <span class="FileTree-Desc"
+                                    >Entrypoint &mdash;
+                                    <code>main.go</code></span
+                                >
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent1">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">internal/</span>
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent2">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">model/</span>
+                                <span class="FileTree-Desc"
+                                    >All data structs (GeoInfo, DnsLookupResult,
+                                    SslCheckResult…)</span
+                                >
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent2">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">service/</span>
+                                <span class="FileTree-Desc"
+                                    >DNS, SSL, Whois, Header, Redirect
+                                    services</span
+                                >
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent1">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">web/</span>
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent2">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">templates/</span>
+                                <span class="FileTree-Desc"
+                                    >index.html &mdash; single-page app
+                                    shell</span
+                                >
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent2">
+                                <i class="fa-solid fa-folder FileTree-Dir"></i>
+                                <span class="FileTree-Name">static/</span>
+                                <span class="FileTree-Desc"
+                                    >CSS, JS (app.js), SVG logo, images</span
+                                >
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent1">
+                                <i
+                                    class="fa-solid fa-file-code FileTree-File"
+                                ></i>
+                                <span class="FileTree-Name">go.mod</span>
+                            </div>
+                            <div class="FileTree-Row FileTree-Row--indent1">
+                                <i
+                                    class="fa-solid fa-file-code FileTree-File"
+                                ></i>
+                                <span class="FileTree-Name">build.sh</span>
+                                <span class="FileTree-Desc">Build script</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="install" class="Doc-Section">
+                        <h1 class="Section-Title">Installation</h1>
+
+                        <h2 class="Section-H2">Prerequisites</h2>
+                        <div class="Req-List">
+                            <div class="Req-Item">
+                                <i class="fa-brands fa-golang Req-Icon"></i>
+                                <div class="Req-Body">
+                                    <span class="Req-Name"
+                                        >Go 1.21 or later</span
+                                    >
+                                    <span class="Req-Note"
+                                        >Standard library only, no third-party
+                                        Go modules required</span
+                                    >
+                                </div>
+                                <a
+                                    href="https://go.dev/dl/"
+                                    class="Req-Link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                    ></i>
+                                </a>
+                            </div>
+                            <div class="Req-Item">
+                                <i class="fa-brands fa-git-alt Req-Icon"></i>
+                                <div class="Req-Body">
+                                    <span class="Req-Name">Git</span>
+                                    <span class="Req-Note"
+                                        >To clone the repository</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="Req-Item">
+                                <i
+                                    class="fa-solid fa-network-wired Req-Icon"
+                                ></i>
+                                <div class="Req-Body">
+                                    <span class="Req-Name"
+                                        >Internet access</span
+                                    >
+                                    <span class="Req-Note"
+                                        >For outbound geolocation API requests
+                                        and WHOIS queries</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Clone &amp; Build</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    bash</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>git clone https://github.com/MatrixTM26/Atmosphere.git
+cd Atmosphere
+chmod +x build.sh
+./build.sh</code></pre>
+                        </div>
+
+                        <p>
+                            The build script runs <code>go mod tidy</code>,
+                            compiles the binary to <code>./atmosphere</code>,
+                            and marks it executable.
+                        </p>
+
+                        <h2 class="Section-H2">Manual Build</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    bash</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>go mod tidy
+go build -o atmosphere ./cmd/server/main.go
+chmod +x atmosphere</code></pre>
+                        </div>
+
+                        <h2 class="Section-H2">Run</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    bash</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>./atmosphere
+<span class="Code-Comment"># Server starts on http://localhost:8080</span></code></pre>
+                        </div>
+
+                        <div class="Alert Alert--tip">
+                            <i class="fa-solid fa-lightbulb Alert-Icon"></i>
+                            <div class="Alert-Body">
+                                <strong>Port configuration.</strong>
+                                By default the server listens on
+                                <code>:8080</code>. Check
+                                <code>cmd/server/main.go</code> to change the
+                                bind address or port.
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="quickstart" class="Doc-Section">
+                        <h1 class="Section-Title">Quick Start</h1>
+                        <p>
+                            After running <code>./atmosphere</code>, open
+                            <code>http://localhost:8080</code> in your browser.
+                        </p>
+
+                        <div class="Steps">
+                            <div class="Step">
+                                <div class="Step-Num">1</div>
+                                <div class="Step-Body">
+                                    <strong>Self Scan</strong> &mdash; The
+                                    default view. Atmosphere immediately
+                                    geolocates your own public IP, fingerprints
+                                    your device/browser, and displays all HTTP
+                                    headers your client sent.
+                                </div>
+                            </div>
+                            <div class="Step">
+                                <div class="Step-Num">2</div>
+                                <div class="Step-Body">
+                                    <strong>Navigate via Sidebar</strong>
+                                    &mdash; Use the left sidebar to switch
+                                    between tools. The sidebar collapses to
+                                    icon-only mode on smaller screens.
+                                </div>
+                            </div>
+                            <div class="Step">
+                                <div class="Step-Num">3</div>
+                                <div class="Step-Body">
+                                    <strong>IP Lookup</strong> &mdash; Enter any
+                                    IPv4 or IPv6 address and press Lookup.
+                                    Results render on both a 2D Leaflet map and
+                                    an interactive 3D globe. Use the Export JSON
+                                    button to save raw results.
+                                </div>
+                            </div>
+                            <div class="Step">
+                                <div class="Step-Num">4</div>
+                                <div class="Step-Body">
+                                    <strong>Export</strong> &mdash; Every tool
+                                    with structured results includes an Export
+                                    JSON button that downloads the raw API
+                                    response.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="self-scan" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i class="fa-solid fa-user-shield Tool-Icon"></i>
+                            Self Scan
+                        </h1>
+                        <p>
+                            Self Scan is the landing view. When opened, it
+                            automatically queries the server for the visitor's
+                            own IP-derived intelligence without any user input.
+                            All data is collected server-side from HTTP headers.
+                        </p>
+
+                        <div class="Tool-Meta">
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Endpoint</span>
+                                <code class="Meta-Val">/api/visitor</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Method</span>
+                                <code class="Meta-Val">GET</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Auth</span>
+                                <span class="Meta-Val">None</span>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">What it collects</h2>
+                        <div class="Data-Table">
+                            <div class="Data-Row Data-Row--head">
+                                <span>Category</span><span>Fields</span>
+                            </div>
+                            <div class="Data-Row">
+                                <span>Geolocation</span>
+                                <span
+                                    >City, Region, Country, Lat/Lon, ISP, ASN,
+                                    Timezone, Proxy/VPN/Hosting flags</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <span>Device</span>
+                                <span
+                                    >Browser name &amp; version, OS name &amp;
+                                    version, Device type, Engine</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <span>Network</span>
+                                <span
+                                    >Public IP, Protocol, User-Agent,
+                                    Accept-Language, Referer, Host header</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <span>Classification</span>
+                                <span
+                                    >IP version (v4/v6), Private, Loopback,
+                                    Multicast flags, Binary octets</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <span>Client Hints</span>
+                                <span
+                                    >Screen resolution, color depth, hardware
+                                    threads, device memory, timezone, language
+                                    list</span
+                                >
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="ip-lookup" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i
+                                class="fa-solid fa-magnifying-glass-location Tool-Icon"
+                            ></i>
+                            IP Lookup
+                        </h1>
+                        <p>
+                            Resolves geolocation data for any public IPv4 or
+                            IPv6 address. Results are displayed in a structured
+                            panel with a dual-mode map (2D Leaflet and
+                            interactive 3D globe) and deep-linked to Google Maps
+                            and OpenStreetMap.
+                        </p>
+
+                        <div class="Tool-Meta">
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Endpoint</span>
+                                <code class="Meta-Val"
+                                    >/api/geo?ip=&lt;address&gt;</code
+                                >
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Method</span>
+                                <code class="Meta-Val">GET</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Input</span>
+                                <code class="Meta-Val">ip</code
+                                ><span> &mdash; query param, IPv4 or IPv6</span>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Example request</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    curl</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>curl "http://localhost:8080/api/geo?ip=202.4.186.101"</code></pre>
+                        </div>
+
+                        <h2 class="Section-H2">Response fields</h2>
+                        <div class="Data-Table">
+                            <div class="Data-Row Data-Row--head">
+                                <span>Field</span><span>Type</span
+                                ><span>Description</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Ip</code><code>string</code
+                                ><span>Queried IP address</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>City</code><code>string</code
+                                ><span>City derived from geolocation</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Region</code><code>string</code
+                                ><span>Region / State / Province</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Country</code><code>string</code
+                                ><span>Country name</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>CountryCode</code><code>string</code
+                                ><span>ISO 3166-1 alpha-2</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Latitude</code><code>float64</code
+                                ><span>Geographic latitude</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Longitude</code><code>float64</code
+                                ><span>Geographic longitude</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Isp</code><code>string</code
+                                ><span>Internet Service Provider name</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Asn</code><code>string</code
+                                ><span>Autonomous System Number</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Proxy</code><code>bool</code
+                                ><span>Detected as proxy/VPN</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>Hosting</code><code>bool</code
+                                ><span>Detected as hosting/datacenter IP</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <code>GoogleMapUrl</code><code>string</code
+                                ><span>Direct Google Maps link</span>
+                            </div>
+                        </div>
+
+                        <div class="Alert Alert--warn">
+                            <i
+                                class="fa-solid fa-triangle-exclamation Alert-Icon"
+                            ></i>
+                            <div class="Alert-Body">
+                                <strong>Private addresses.</strong>
+                                Private, loopback, and multicast addresses
+                                (10.x.x.x, 192.168.x.x, ::1, etc.) will return
+                                an error. Only publicly routable IPs are
+                                resolvable.
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="batch-lookup" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i class="fa-solid fa-layer-group Tool-Icon"></i>
+                            Batch Lookup
+                        </h1>
+                        <p>
+                            Resolves geolocation data for multiple IP addresses
+                            simultaneously. Enter one IP per line; results
+                            render in a collapsible per-IP panel. Each entry is
+                            individually exportable as JSON.
+                        </p>
+
+                        <div class="Tool-Meta">
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Endpoint</span>
+                                <code class="Meta-Val">/api/geo/batch</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Method</span>
+                                <code class="Meta-Val">POST</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Content-Type</span>
+                                <code class="Meta-Val">application/json</code>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Request body</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-code"></i> json</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>{
+  "ips": [
+    "8.8.8.8",
+    "1.1.1.1",
+    "202.4.186.101"
+  ]
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="dns-tools" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i class="fa-solid fa-server Tool-Icon"></i> DNS
+                            Tools
+                        </h1>
+                        <p>
+                            Three DNS operations in one view: forward hostname
+                            resolution, reverse PTR lookup, and full DNS record
+                            inspection. All lookups use Go's
+                            <code>net.Resolver</code> with a 4-second timeout.
+                        </p>
+
+                        <div class="Sub-Tool">
+                            <div class="Sub-Tool-Head">
+                                <i
+                                    class="fa-solid fa-arrow-right-to-bracket"
+                                ></i>
+                                Forward Lookup
+                            </div>
+                            <div class="Tool-Meta">
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Endpoint</span>
+                                    <code class="Meta-Val"
+                                        >/api/dns/resolve?host=&lt;hostname&gt;</code
+                                    >
+                                </div>
+                            </div>
+                            <p>
+                                Resolves a hostname to its A / AAAA records.
+                                Returns all IP addresses bound to the domain.
+                            </p>
+                        </div>
+
+                        <div class="Sub-Tool">
+                            <div class="Sub-Tool-Head">
+                                <i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                ></i>
+                                Reverse Lookup
+                            </div>
+                            <div class="Tool-Meta">
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Endpoint</span>
+                                    <code class="Meta-Val"
+                                        >/api/dns/reverse?ip=&lt;address&gt;</code
+                                    >
+                                </div>
+                            </div>
+                            <p>
+                                Performs a reverse PTR lookup on a given IP.
+                                Returns associated hostnames if PTR records
+                                exist.
+                            </p>
+                        </div>
+
+                        <div class="Sub-Tool">
+                            <div class="Sub-Tool-Head">
+                                <i class="fa-solid fa-database"></i> Full Record
+                                Lookup
+                            </div>
+                            <div class="Tool-Meta">
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Endpoint</span>
+                                    <code class="Meta-Val"
+                                        >/api/dns/records?host=&lt;hostname&gt;</code
+                                    >
+                                </div>
+                            </div>
+                            <p>
+                                Retrieves A, AAAA, MX, NS, TXT, CNAME, and SOA
+                                records for a domain simultaneously.
+                            </p>
+                        </div>
+
+                        <h2 class="Section-H2">Port Scan</h2>
+                        <p>
+                            The DNS Tools view also includes a port availability
+                            check against 18 common TCP ports. Ports are probed
+                            with a 2-second dial timeout; response latency is
+                            reported in milliseconds.
+                        </p>
+
+                        <div class="Port-Grid">
+                            <span class="Port-Badge">FTP <code>21</code></span>
+                            <span class="Port-Badge">SSH <code>22</code></span>
+                            <span class="Port-Badge"
+                                >Telnet <code>23</code></span
+                            >
+                            <span class="Port-Badge">SMTP <code>25</code></span>
+                            <span class="Port-Badge">DNS <code>53</code></span>
+                            <span class="Port-Badge">HTTP <code>80</code></span>
+                            <span class="Port-Badge"
+                                >POP3 <code>110</code></span
+                            >
+                            <span class="Port-Badge"
+                                >IMAP <code>143</code></span
+                            >
+                            <span class="Port-Badge"
+                                >HTTPS <code>443</code></span
+                            >
+                            <span class="Port-Badge"
+                                >SMTPS <code>465</code></span
+                            >
+                            <span class="Port-Badge"
+                                >IMAPS <code>993</code></span
+                            >
+                            <span class="Port-Badge"
+                                >POP3S <code>995</code></span
+                            >
+                            <span class="Port-Badge"
+                                >MySQL <code>3306</code></span
+                            >
+                            <span class="Port-Badge"
+                                >RDP <code>3389</code></span
+                            >
+                            <span class="Port-Badge"
+                                >PostgreSQL <code>5432</code></span
+                            >
+                            <span class="Port-Badge"
+                                >Redis <code>6379</code></span
+                            >
+                            <span class="Port-Badge"
+                                >HTTP-Alt <code>8080</code></span
+                            >
+                            <span class="Port-Badge"
+                                >HTTPS-Alt <code>8443</code></span
+                            >
+                        </div>
+                    </section>
+
+                    <section id="ssl-check" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i class="fa-solid fa-lock Tool-Icon"></i> SSL
+                            Certificate
+                        </h1>
+                        <p>
+                            Dials a host on TCP port 443 using Go's
+                            <code>crypto/tls</code> package and inspects the
+                            presented certificate chain. No HTTP request is made
+                            &mdash; this is a raw TLS handshake only.
+                        </p>
+
+                        <div class="Tool-Meta">
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Endpoint</span>
+                                <code class="Meta-Val"
+                                    >/api/ssl?host=&lt;hostname&gt;</code
+                                >
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Method</span>
+                                <code class="Meta-Val">GET</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Timeout</span>
+                                <code class="Meta-Val">6 seconds</code>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Certificate fields</h2>
+                        <div class="Data-Table">
+                            <div class="Data-Row Data-Row--head">
+                                <span>Field</span><span>Description</span>
+                            </div>
+                            <div class="Data-Row">
+                                <code>Subject</code
+                                ><span
+                                    >Common Name (CN) of the certificate</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <code>Issuer</code
+                                ><span
+                                    >Certificate Authority that signed the
+                                    cert</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <code>SerialNumber</code
+                                ><span>Unique serial number in decimal</span>
+                            </div>
+                            <div class="Data-Row">
+                                <code>SignatureAlgorithm</code
+                                ><span>e.g. SHA256-RSA, ECDSA</span>
+                            </div>
+                            <div class="Data-Row">
+                                <code>NotBefore / NotAfter</code
+                                ><span>Validity window in RFC3339 UTC</span>
+                            </div>
+                            <div class="Data-Row">
+                                <code>DaysUntilExpiry</code
+                                ><span
+                                    >Integer countdown in days (negative =
+                                    expired)</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <code>IsExpired</code
+                                ><span
+                                    >True if current time is past NotAfter</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <code>IsSelfSigned</code
+                                ><span
+                                    >True if Subject CN equals Issuer CN</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <code>DnsNames</code
+                                ><span>SANs (Subject Alternative Names)</span>
+                            </div>
+                            <div class="Data-Row">
+                                <code>TlsVersion</code
+                                ><span
+                                    >Negotiated TLS version (TLS 1.2, TLS
+                                    1.3…)</span
+                                >
+                            </div>
+                            <div class="Data-Row">
+                                <code>CipherSuite</code
+                                ><span>Negotiated cipher suite name</span>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Example request</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    curl</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>curl "http://localhost:8080/api/ssl?host=github.com"</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="whois" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i class="fa-solid fa-id-card Tool-Icon"></i> Whois
+                            Lookup
+                        </h1>
+                        <p>
+                            Performs a WHOIS query over TCP port 43 against the
+                            appropriate registry server for the queried TLD.
+                            Supports automatic referral chaining (IANA &rarr;
+                            TLD-specific server).
+                        </p>
+
+                        <div class="Tool-Meta">
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Endpoint</span>
+                                <code class="Meta-Val"
+                                    >/api/whois?domain=&lt;domain&gt;</code
+                                >
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Method</span>
+                                <code class="Meta-Val">GET</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Timeout</span>
+                                <code class="Meta-Val">6 seconds</code>
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Supported TLDs</h2>
+                        <div class="Port-Grid">
+                            <span class="Port-Badge">.com</span>
+                            <span class="Port-Badge">.net</span>
+                            <span class="Port-Badge">.org</span>
+                            <span class="Port-Badge">.io</span>
+                            <span class="Port-Badge">.co</span>
+                            <span class="Port-Badge">.dev</span>
+                            <span class="Port-Badge">.app</span>
+                            <span class="Port-Badge">.info</span>
+                            <span class="Port-Badge">.biz</span>
+                            <span class="Port-Badge">.us</span>
+                            <span class="Port-Badge">.me</span>
+                            <span class="Port-Badge">.tv</span>
+                            <span class="Port-Badge">.cc</span>
+                            <span class="Port-Badge">.xyz</span>
+                            <span class="Port-Badge">.id</span>
+                            <span class="Port-Badge">.sg</span>
+                            <span class="Port-Badge">.uk</span>
+                            <span class="Port-Badge">.ai</span>
+                        </div>
+                        <p style="margin-top: 12px">
+                            All other TLDs fall back to
+                            <code>whois.iana.org</code> as the referral
+                            resolver.
+                        </p>
+
+                        <h2 class="Section-H2">Example request</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    curl</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>curl "http://localhost:8080/api/whois?domain=github.com"</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="header-inspect" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i class="fa-solid fa-list-ul Tool-Icon"></i> Header
+                            Inspector
+                        </h1>
+                        <p>
+                            Issues an HTTP GET request to any target URL and
+                            returns all response headers along with a security
+                            header presence report. Follows up to 10 redirects.
+                        </p>
+
+                        <div class="Tool-Meta">
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Endpoint</span>
+                                <code class="Meta-Val"
+                                    >/api/headers?url=&lt;url&gt;</code
+                                >
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Method</span>
+                                <code class="Meta-Val">GET</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">Timeout</span>
+                                <code class="Meta-Val">8 seconds</code>
+                            </div>
+                            <div class="Meta-Row">
+                                <span class="Meta-Key">User-Agent</span>
+                                <code class="Meta-Val"
+                                    >Atmosphere-OSINT-Tool</code
+                                >
+                            </div>
+                        </div>
+
+                        <h2 class="Section-H2">Security header flags</h2>
+                        <div class="Data-Table">
+                            <div class="Data-Row Data-Row--head">
+                                <span>Header</span><span>Flag field</span>
+                            </div>
+                            <div class="Data-Row">
+                                <code>Strict-Transport-Security</code
+                                ><code>HasHsts</code>
+                            </div>
+                            <div class="Data-Row">
+                                <code>Content-Security-Policy</code
+                                ><code>HasCsp</code>
+                            </div>
+                            <div class="Data-Row">
+                                <code>X-Frame-Options</code
+                                ><code>HasXFrameOptions</code>
+                            </div>
+                            <div class="Data-Row">
+                                <code>X-Content-Type-Options</code
+                                ><code>HasXContentTypeOpts</code>
+                            </div>
+                            <div class="Data-Row">
+                                <code>Referrer-Policy</code
+                                ><code>HasReferrerPolicy</code>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="network-tools" class="Doc-Section">
+                        <h1 class="Section-Title">
+                            <i
+                                class="fa-solid fa-tower-broadcast Tool-Icon"
+                            ></i>
+                            Network Tools
+                        </h1>
+                        <p>
+                            Provides two HTTP-level network diagnostic
+                            utilities: redirect chain tracing and raw port
+                            checking on arbitrary hosts.
+                        </p>
+
+                        <div class="Sub-Tool">
+                            <div class="Sub-Tool-Head">
+                                <i class="fa-solid fa-route"></i> Redirect
+                                Tracer
+                            </div>
+                            <div class="Tool-Meta">
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Endpoint</span>
+                                    <code class="Meta-Val"
+                                        >/api/redirect?url=&lt;url&gt;</code
+                                    >
+                                </div>
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Max hops</span>
+                                    <code class="Meta-Val">15</code>
+                                </div>
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Timeout</span>
+                                    <code class="Meta-Val">10 seconds</code>
+                                </div>
+                            </div>
+                            <p>
+                                Traces each HTTP redirect hop individually.
+                                Reports URL, status code, Location header value,
+                                and per-hop response latency in milliseconds.
+                            </p>
+                            <div class="Code-Block">
+                                <div class="Code-Header">
+                                    <span class="Code-Lang"
+                                        ><i class="fa-solid fa-terminal"></i>
+                                        curl</span
+                                    >
+                                    <button
+                                        class="Code-Copy"
+                                        onclick="copyCode(this)"
+                                    >
+                                        <i class="fa-regular fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <pre><code>curl "http://localhost:8080/api/redirect?url=http://github.com"</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="Sub-Tool">
+                            <div class="Sub-Tool-Head">
+                                <i class="fa-solid fa-plug"></i> Port Checker
+                            </div>
+                            <div class="Tool-Meta">
+                                <div class="Meta-Row">
+                                    <span class="Meta-Key">Endpoint</span>
+                                    <code class="Meta-Val"
+                                        >/api/ports?host=&lt;hostname&gt;</code
+                                    >
+                                </div>
+                            </div>
+                            <p>
+                                On-demand TCP port scan against the same 18-port
+                                set used by DNS Tools. See
+                                <a href="#dns-tools" class="Inline-Link"
+                                    >DNS Tools &rarr; Port Scan</a
+                                >
+                                for the full port list.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="api" class="Doc-Section">
+                        <h1 class="Section-Title">API Reference</h1>
+                        <p>
+                            All endpoints return
+                            <code>Content-Type: application/json</code>. Error
+                            responses use a consistent envelope.
+                        </p>
+
+                        <h2 class="Section-H2">Error envelope</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-code"></i> json</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>{
+  "error": "description of what went wrong"
+}</code></pre>
+                        </div>
+
+                        <h2 class="Section-H2">Endpoint summary</h2>
+                        <div class="Data-Table">
+                            <div class="Data-Row Data-Row--head">
+                                <span>Method</span><span>Path</span
+                                ><span>Description</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/visitor</code>
+                                <span>Self scan (caller's own data)</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/geo?ip=</code>
+                                <span>Geolocate a single IP</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--post"
+                                    >POST</span
+                                >
+                                <code>/api/geo/batch</code>
+                                <span>Geolocate multiple IPs</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/dns/resolve?host=</code>
+                                <span>Forward DNS lookup</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/dns/reverse?ip=</code>
+                                <span>Reverse PTR lookup</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/dns/records?host=</code>
+                                <span>Full DNS record set</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/ports?host=</code>
+                                <span>TCP port availability check</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/ssl?host=</code>
+                                <span>TLS certificate inspection</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/whois?domain=</code>
+                                <span>WHOIS domain record</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/headers?url=</code>
+                                <span>HTTP response headers</span>
+                            </div>
+                            <div class="Data-Row Data-Row--3col">
+                                <span class="Method-Badge Method-Badge--get"
+                                    >GET</span
+                                >
+                                <code>/api/redirect?url=</code>
+                                <span>Redirect chain trace</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="build" class="Doc-Section">
+                        <h1 class="Section-Title">Build &amp; Deploy</h1>
+
+                        <h2 class="Section-H2">Build script</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-file-code"></i>
+                                    build.sh</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>#!/usr/bin/sh
+
+go mod tidy
+go build -o atmosphere ./cmd/server/main.go
+chmod +x atmosphere
+echo "build finished."</code></pre>
+                        </div>
+
+                        <h2 class="Section-H2">Run as a background service</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    bash</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>nohup ./atmosphere &gt; atmosphere.log 2&gt;&amp;1 &amp;
+echo $! &gt; atmosphere.pid
+<span class="Code-Comment"># To stop:</span>
+kill $(cat atmosphere.pid)</code></pre>
+                        </div>
+
+                        <h2 class="Section-H2">Systemd unit (optional)</h2>
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-file-lines"></i>
+                                    /etc/systemd/system/atmosphere.service</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>[Unit]
+Description=Atmosphere OSINT Tool
+After=network.target
+
+[Service]
+ExecStart=/opt/atmosphere/atmosphere
+WorkingDirectory=/opt/atmosphere
+Restart=on-failure
+User=nobody
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+                        </div>
+
+                        <div class="Code-Block">
+                            <div class="Code-Header">
+                                <span class="Code-Lang"
+                                    ><i class="fa-solid fa-terminal"></i>
+                                    bash</span
+                                >
+                                <button
+                                    class="Code-Copy"
+                                    onclick="copyCode(this)"
+                                >
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code>sudo systemctl enable atmosphere
+sudo systemctl start atmosphere
+sudo systemctl status atmosphere</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="license" class="Doc-Section">
+                        <h1 class="Section-Title">License</h1>
+                        <p>
+                            Atmosphere is open source software. See the
+                            <code>LICENSE</code> file in the repository root for
+                            the full text.
+                        </p>
+                        <div class="Alert Alert--info">
+                            <i
+                                class="fa-solid fa-scale-balanced Alert-Icon"
+                            ></i>
+                            <div class="Alert-Body">
+                                This tool is provided for educational and lawful
+                                security research purposes. The authors are not
+                                responsible for misuse. Always obtain proper
+                                authorization before performing reconnaissance
+                                on systems you do not own.
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <footer class="Doc-Footer">
+                    <span
+                        >Atmosphere &mdash; OSINT &amp; Network Intelligence
+                        Tool</span
+                    >
+                    <a
+                        href="https://github.com/MatrixTM26/Atmosphere"
+                        target="_blank"
+                        rel="noopener"
+                        class="Inline-Link"
+                    >
+                        <i class="fa-brands fa-github"></i> MatrixTM26 /
+                        Atmosphere
+                    </a>
+                </footer>
+            </div>
+        </div>
+
+        <script src="static/script/script.js"></script>
+    </body>
+</html>
