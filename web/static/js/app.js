@@ -1223,14 +1223,16 @@ class AtmosphereClient {
         GlobeContainerElement.dataset.initialized = "true";
         GlobeContainerElement.innerHTML = "";
 
+        await new Promise((Resolve) => requestAnimationFrame(() => requestAnimationFrame(Resolve)));
+
         const Latitude = parseFloat(GlobeContainerElement.dataset.lat);
         const Longitude = parseFloat(GlobeContainerElement.dataset.lon);
-        const ContainerWidth = GlobeContainerElement.clientWidth || 320;
-        const ContainerHeight = GlobeContainerElement.clientHeight || 320;
+        const ContainerWidth = GlobeContainerElement.clientWidth || GlobeContainerElement.offsetWidth || 640;
+        const ContainerHeight = GlobeContainerElement.clientHeight || GlobeContainerElement.offsetHeight || 640;
 
         const Scene = new window.THREE.Scene();
         const Camera = new window.THREE.PerspectiveCamera(45, ContainerWidth / ContainerHeight, 0.1, 1000);
-        Camera.position.z = 3.55;
+        Camera.position.z = 3.1;
 
         const Renderer = new window.THREE.WebGLRenderer({ antialias: true, alpha: true });
         Renderer.setSize(ContainerWidth, ContainerHeight);

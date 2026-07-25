@@ -37,36 +37,6 @@ Atmosphere does not collect data from third parties without their knowledge or c
 
 There is no tracking-link generator, no covert capture mechanism, and no persistent storage of visitor data — reports exist only for the duration of the request. Use this tool only on systems and targets you are authorized to test.
 
-## Project Structure
-
-```
-atmosphere/
-├── cmd/
-│   └── server/
-│       └── main.go                  # Entry point, routing, server bootstrap
-├── internal/
-│   ├── handler/
-│   │   ├── api.go                   # /api/report, /api/lookup, /api/batch-lookup, /api/dns-resolve, /api/reverse-dns
-│   │   └── page.go                  # Serves the main panel page
-│   ├── middleware/
-│   │   └── logger.go                # Request logging & security headers
-│   ├── model/
-│   │   └── visitor.go                # All shared data structures
-│   └── service/
-│       ├── geolocate.go              # Multi-provider geolocation with fallback chain
-│       ├── useragent.go              # Browser/OS/device parsing
-│       └── dnsresolve.go             # Forward and reverse DNS resolution
-├── web/
-│   ├── static/
-│   │   ├── css/style.css             # GitHub Dark theme, sidebar layout, responsive
-│   │   ├── js/app.js                 # Client-side logic (class AtmosphereClient)
-│   │   └── img/logo.svg              # Application logo
-│   └── templates/
-│       └── index.html                # Sidebar shell and all views
-├── go.mod
-└── README.md
-```
-
 ## Installation & Running
 
 Requires Go >= 1.22.

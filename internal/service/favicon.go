@@ -65,11 +65,11 @@ func (Service *FaviconService) LookupFaviconHash(TargetUrl string) (model.Favico
 	Mmh3Hash := ComputeMurmurHash3(Base64Encoded)
 
 	return model.FaviconResult{
-		Url:           CleanUrl,
-		FaviconUrl:    FaviconUrl,
-		Md5Hash:       Md5Hex,
-		Mmh3Hash:      Mmh3Hash,
-		SizeBytes:     len(BodyBytes),
+		Url:            CleanUrl,
+		FaviconUrl:     FaviconUrl,
+		Md5Hash:        Md5Hex,
+		Mmh3Hash:       Mmh3Hash,
+		SizeBytes:      len(BodyBytes),
 		ShodanQueryUrl: fmt.Sprintf("https://www.shodan.io/search?query=http.favicon.hash%%3A%d", Mmh3Hash),
 	}, nil
 }

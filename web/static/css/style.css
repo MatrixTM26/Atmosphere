@@ -654,7 +654,7 @@ body {
 
 .GlobeEmbed {
     width: 100%;
-    height: 640px;
+    height: 520px;
     border: 1px solid var(--Border-Default);
     border-radius: var(--Radius-Large);
     margin-bottom: 12px;

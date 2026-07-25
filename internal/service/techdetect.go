@@ -22,9 +22,9 @@ func NewTechDetectService() *TechDetectService {
 }
 
 type TechSignature struct {
-	Name     string
-	Category string
-	Pattern  *regexp.Regexp
+	Name      string
+	Category  string
+	Pattern   *regexp.Regexp
 	HeaderKey string
 }
 

@@ -141,10 +141,10 @@ type SslCertificateInfo struct {
 }
 
 type SslCheckResult struct {
-	Hostname    string                `json:"Hostname"`
-	Certificate SslCertificateInfo    `json:"Certificate"`
-	ChainLength int                   `json:"ChainLength"`
-	ChainInfo   []SslCertificateInfo  `json:"ChainInfo"`
+	Hostname    string               `json:"Hostname"`
+	Certificate SslCertificateInfo   `json:"Certificate"`
+	ChainLength int                  `json:"ChainLength"`
+	ChainInfo   []SslCertificateInfo `json:"ChainInfo"`
 }
 
 type WhoisRequest struct {
@@ -162,12 +162,12 @@ type HeaderInspectRequest struct {
 }
 
 type HeaderInspectResult struct {
-	Url            string            `json:"Url"`
-	StatusCode     int               `json:"StatusCode"`
-	StatusText     string            `json:"StatusText"`
-	FinalUrl       string            `json:"FinalUrl"`
-	Headers        []HttpHeaderEntry `json:"Headers"`
-	ResponseTimeMs int64             `json:"ResponseTimeMs"`
+	Url            string              `json:"Url"`
+	StatusCode     int                 `json:"StatusCode"`
+	StatusText     string              `json:"StatusText"`
+	FinalUrl       string              `json:"FinalUrl"`
+	Headers        []HttpHeaderEntry   `json:"Headers"`
+	ResponseTimeMs int64               `json:"ResponseTimeMs"`
 	SecurityFlags  SecurityHeaderFlags `json:"SecurityFlags"`
 }
 
@@ -184,13 +184,13 @@ type DnsRecordsRequest struct {
 }
 
 type DnsRecordsResult struct {
-	Hostname   string   `json:"Hostname"`
-	ARecords   []string `json:"ARecords"`
+	Hostname    string   `json:"Hostname"`
+	ARecords    []string `json:"ARecords"`
 	AaaaRecords []string `json:"AaaaRecords"`
-	MxRecords  []string `json:"MxRecords"`
-	TxtRecords []string `json:"TxtRecords"`
-	NsRecords  []string `json:"NsRecords"`
-	CnameRecord string  `json:"CnameRecord"`
+	MxRecords   []string `json:"MxRecords"`
+	TxtRecords  []string `json:"TxtRecords"`
+	NsRecords   []string `json:"NsRecords"`
+	CnameRecord string   `json:"CnameRecord"`
 }
 
 type PortCheckRequest struct {

@@ -12,18 +12,18 @@ import (
 )
 
 type ApiHandler struct {
-	GeoService            *service.GeoLocateService
-	UserAgentService      *service.UserAgentService
-	DnsService            *service.DnsResolveService
-	SslCheckService       *service.SslCheckService
-	WhoisService          *service.WhoisService
-	HeaderInspectService  *service.HeaderInspectService
-	TechDetectService     *service.TechDetectService
-	BlacklistService      *service.BlacklistService
-	PreviewService        *service.PreviewService
-	SubdomainService      *service.SubdomainService
-	FaviconService        *service.FaviconService
-	RedirectTraceService  *service.RedirectTraceService
+	GeoService           *service.GeoLocateService
+	UserAgentService     *service.UserAgentService
+	DnsService           *service.DnsResolveService
+	SslCheckService      *service.SslCheckService
+	WhoisService         *service.WhoisService
+	HeaderInspectService *service.HeaderInspectService
+	TechDetectService    *service.TechDetectService
+	BlacklistService     *service.BlacklistService
+	PreviewService       *service.PreviewService
+	SubdomainService     *service.SubdomainService
+	FaviconService       *service.FaviconService
+	RedirectTraceService *service.RedirectTraceService
 }
 
 func NewApiHandler(

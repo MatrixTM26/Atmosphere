@@ -78,8 +78,8 @@ func (Service *SubdomainService) EnumerateSubdomains(TargetDomain string) (model
 	sort.Strings(SortedSubdomains)
 
 	return model.SubdomainResult{
-		Domain:         CleanDomain,
-		Subdomains:     SortedSubdomains,
+		Domain:          CleanDomain,
+		Subdomains:      SortedSubdomains,
 		TotalDiscovered: len(SortedSubdomains),
 	}, nil
 }
