@@ -24,11 +24,9 @@ func SecurityHeaders(NextHandler http.Handler) http.Handler {
 	})
 }
 
-func NoCacheStatic(NextHandler http.Handler) http.Handler {
+func CacheableStatic(NextHandler http.Handler) http.Handler {
 	return http.HandlerFunc(func(ResponseWriter http.ResponseWriter, Request *http.Request) {
-		ResponseWriter.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
-		ResponseWriter.Header().Set("Pragma", "no-cache")
-		ResponseWriter.Header().Set("Expires", "0")
+		ResponseWriter.Header().Set("Cache-Control", "public, max-age=86400")
 		NextHandler.ServeHTTP(ResponseWriter, Request)
 	})
 }

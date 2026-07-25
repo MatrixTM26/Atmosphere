@@ -77,17 +77,26 @@ go mod tidy
 go run ./cmd/server
 ```
 
-The server runs on `http://localhost:8080` by default. Use a different port with an environment variable:
+The server runs on `http://0.0.0.0:8080` by default. Configure the host and port with CLI flags:
 
 ```bash
-ATMOSPHERE_PORT=9090 go run ./cmd/server
+go run ./cmd/server -s 127.0.0.1 -p 9090
+go run ./cmd/server --host 0.0.0.0 --port 9090
 ```
+
+Environment variables are also supported as a fallback:
+
+```bash
+ATMOSPHERE_HOST=127.0.0.1 ATMOSPHERE_PORT=9090 go run ./cmd/server
+```
+
+Precedence order: CLI flag (long form) > CLI flag (shorthand) > environment variable > default.
 
 Build a production binary:
 
 ```bash
 go build -o atmosphere-server ./cmd/server
-./atmosphere-server
+./atmosphere-server -s 0.0.0.0 -p 8080
 ```
 
 ## Endpoints

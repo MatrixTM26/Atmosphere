@@ -60,7 +60,7 @@ func main() {
 	Router.HandleFunc("/api/redirect-trace", ApiHandlerInstance.HandleRedirectTrace)
 
 	StaticFileServer := http.FileServer(http.Dir("web/static"))
-	Router.Handle("/static/", middleware.NoCacheStatic(http.StripPrefix("/static/", StaticFileServer)))
+	Router.Handle("/static/", middleware.CacheableStatic(http.StripPrefix("/static/", StaticFileServer)))
 
 	WrappedRouter := middleware.SecurityHeaders(middleware.RequestLogger(Router))
 
